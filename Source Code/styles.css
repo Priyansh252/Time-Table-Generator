@@ -1,0 +1,277 @@
+/* ========== Modern Gradient Theme (Enhanced) ========== */
+* {
+  box-sizing: border-box;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition curve */
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  /* Softer, more ethereal background */
+  background: radial-gradient(circle at 15% 85%, #e8f0ff, #f9faff 40%, #ffffff 90%);
+  color: #1a1a2e; /* Deeper primary text color */
+}
+
+/* Add some ambient gradient blobs */
+body::before {
+  content: '';
+  position: fixed;
+  top: -250px; /* Moved up for softer top glow */
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99,102,241,0.4), transparent 75%); /* Stronger color */
+  z-index: -2;
+  filter: blur(100px); 
+  opacity: 0.8;
+}
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -200px;
+  right: -300px; /* Moved right for asymmetrical glow */
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(236,72,153,0.3), transparent 75%);
+  z-index: -2;
+  filter: blur(120px);
+  opacity: 0.7;
+}
+
+/* Layout */
+.container {
+  max-width: 1280px; 
+  margin: 40px auto;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px; 
+  align-items: start;
+}
+
+/* Glassy card - Enhanced Elevation */
+.card {
+  background: rgba(255, 255, 255, 0.9); /* More opaque, cleaner look */
+  backdrop-filter: blur(18px); /* Increased blur for a better glass effect */
+  border-radius: 24px; /* More modern, softer corners */
+  padding: 28px; /* More generous padding */
+  border: 1px solid rgba(255,255,255,0.7); 
+  /* Layered shadow for a floating look */
+  box-shadow: 0 15px 40px rgba(99,102,241,0.1), 0 0 0 1px rgba(0,0,0,0.02); 
+}
+
+/* Header */
+.app-header-wrap {
+    padding: 20px 0 30px 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.app-header-title {
+    font-size: 38px; /* Larger main title */
+    font-weight: 800;
+    color: #1a1a2e;
+}
+.app-header-sub {
+    color: #4f46e5; /* Deeper primary color */
+    font-weight: 500;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+}
+
+h1, .header-title {
+  font-weight: 700; /* Slightly lighter header weight */
+  font-size: 24px;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.header-sub {
+  color: #6366f1;
+  font-weight: 500;
+  font-size: 15px; /* Slightly larger subtitle */
+}
+
+/* Input & Select */
+.label {
+    display: block;
+    font-size: 14px; /* Slightly larger label */
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 20px; 
+    color: #3f3f46; /* Darker gray for contrast */
+}
+.label:first-child {
+    margin-top: 0;
+}
+.input, .select, .time, .search {
+  width: 100%;
+  padding: 12px 14px; /* Increased padding */
+  border-radius: 14px; 
+  border: 1px solid #e0e7ff; /* Very light blue border */
+  font-size: 16px; 
+  background: #ffffff;
+  color: #1a1a2e;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.04); /* Deeper inset shadow */
+}
+.input:focus, .select:focus, .time:focus, .search:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.35), inset 0 1px 4px rgba(0,0,0,0.04); 
+}
+
+/* Small Inputs in Session Row (FIXED CLIPPING ISSUE HERE) */
+.session-row {
+    display: flex;
+    gap: 8px; /* Slightly reduced gap */
+    align-items: center;
+    margin-top: 10px; 
+}
+.session-row .select, .session-row .time {
+    padding: 10px 12px;
+    font-size: 15px;
+}
+.session-row .time {
+    width: 85px; /* Reduced fixed width */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.session-row .select {
+    width: 75px; /* Reduced fixed width */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.session-row .btn-primary {
+    flex-shrink: 0;
+    padding: 8px 12px; /* Reduced horizontal padding */
+    font-size: 14px;
+    margin-left: 2px; /* Small buffer space */
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px; 
+  border-radius: 14px; /* Softer rounded button */
+  font-weight: 600; 
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease-in-out;
+}
+.btn-primary {
+  /* Smoother, richer primary gradient */
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6); 
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(99,102,241,0.4); 
+}
+.btn-primary:hover {
+  transform: translateY(-3px); /* More noticeable lift */
+  box-shadow: 0 12px 30px rgba(99,102,241,0.5);
+}
+.btn-ghost {
+  background: #ffffff; 
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* More subtle, clean shadow */
+}
+.btn-ghost:hover {
+    background: #f7f9ff; /* Subtle hover color */
+    border-color: #6366f1;
+}
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+/* Session & Course cards */
+.session-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px; 
+}
+.session-item {
+    background: #e0e7ff; /* Richer blue background */
+    color: #3730a3;
+    padding: 7px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+.course-card {
+  background: linear-gradient(145deg, #ffffff, #f7f9ff);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-left: 8px solid; /* Thicker accent bar */
+  border-radius: 16px; 
+  padding: 18px; /* More padding */
+  margin-bottom: 15px; /* More vertical separation */
+  box-shadow: 0 6px 20px rgba(99,102,241,0.06); 
+}
+
+.course-card.recent {
+  background: linear-gradient(145deg, #eef2ff, #ffffff);
+  box-shadow: 0 12px 30px rgba(99,102,241,0.25);
+}
+
+.color-chip {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.7); /* Subtle white ring */
+}
+
+/* Results */
+.results-wrap {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: 18px; /* More rounded */
+  padding: 20px; /* More padding */
+  border: 1px solid #e0e7ff;
+  border-left: 8px solid;
+  /* Glow effect on results */
+  box-shadow: 0 10px 30px rgba(108,99,255,0.1), 0 0 15px rgba(108,99,255,0.05); 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-title {
+  font-weight: 800;
+  font-size: 19px;
+  color: #1a1a2e;
+}
+.result-course-list {
+    margin-top: 12px;
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 10px;
+}
+
+/* Footer & Notes */
+.small-note {
+    font-size: 13px;
+    color: #71717a; 
+    padding: 8px 0;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px; /* Extra margin for space */
+  color: #c4c4c4; 
+  font-size: 13px;
+}
